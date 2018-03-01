@@ -43,7 +43,13 @@ def main():
         ## Getting the methods to be performed to test on the light grid
         for i in ins:
             method, l1, l2, l3, l4 = rc.regexClean(i,L)
-            #Add all here
+            
+            ## Run the instructions on the grid
+            _lights.runCmd(method,l1,l2,l3,l4)
+        
+        count = _lights.counts()
+        print(count)
+
 
 
             
