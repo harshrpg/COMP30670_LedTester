@@ -43,6 +43,8 @@ def main():
         ## Getting the methods to be performed to test on the light grid
         for i in ins:
             method, l1, l2, l3, l4 = rc.regexClean(i)
+
+            ## Get the instructios within the bounds of the Grid
             if l1 < 0:
                 l1 = 0
             if l3 < 0:
