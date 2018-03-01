@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import argparse
-import utils
-import regClean as rc
-import Lights
+from led_tester import utils
+from led_tester import regClean as rc
+from led_tester import Lights
 
 """Main module."""
 def main():
