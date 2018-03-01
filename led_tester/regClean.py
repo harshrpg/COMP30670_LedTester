@@ -17,5 +17,5 @@ def regexClean(instructions,L):
             l3 = L-1
         if l4 >= L:
             l4 = L-1
-    return method, l1, l2, l3, l4
+        return method, l1, l2, l3, l4
    
