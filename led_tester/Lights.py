@@ -8,6 +8,8 @@ class Lights(object):
         self.__offCount = L*L
 
     def runCmd(self, method,l1,l2,l3,l4):
+        """Commands to test the leds from the grid"""
+
         if method == "turn on":
             if l1 <= l3 and l2 <= l4:
                 for row in range(l2, l4+1):
@@ -39,6 +41,7 @@ class Lights(object):
                                 self.__grid[row][i] = True
 
     def counts(self):
+        """Counts the total Leds that are on and off"""
         self.__onCount = (sum([row.count(True) for row in self.__grid]))
         self.__offCount = self.__offCount-self.__onCount
         return('LEDS ON: {}, LEDS OFF {}'.format(self.__onCount, self.__offCount))
