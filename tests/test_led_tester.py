@@ -10,15 +10,38 @@ def test_parseFile():
     N, instructions = utils.parseFile(testFile)
     assert N == 10
     assert instructions == [
-        'turn on 2,6 through 4,9\n', 'switch 0,0 through 9,0']
+        'turn on 2,6 through 4,9\n', 'switch -1,0 through 15,10']
 
 def test_regEx():
     testFile = "C:\input.in"
     N, instructions = utils.parseFile(testFile)
     for i in instructions:
-        method, l1, l2, l3, l4 = rc.regexClean(i)
+        method, l1, l2, l3, l4 = rc.regexClean(i,N)
     assert method == 'switch'
     assert l1 == 0
     assert l2 == 0
     assert l3 == 9
-    assert l4 == 0
+    assert l4 == 9
+
+def test_RegexNone():
+    testFile = "C:\input.in"
+    N, instructions = utils.parseFile(testFile)
+    for i in instructions:
+        method, l1, l2, l3, l4 = rc.regexClean(i,N)
+    assert method == None
+    assert l1 == None
+    assert l2 == None
+    assert l3 == None
+    assert l4 == None
+
+def test_NumbersOutofBounds():
+    testFile = "C:\input.in"
+    N, instructions = utils.parseFile(testFile)
+    for i in instructions:
+        method, l1, l2, l3, l4 = rc.regexClean(i,N)
+    assert method == 'switch'
+    assert l1 == 0
+    assert l2 == 0
+    assert l3 == 9
+    assert l4 == 9
+    

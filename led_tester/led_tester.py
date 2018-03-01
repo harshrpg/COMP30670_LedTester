@@ -42,19 +42,19 @@ def main():
 
         ## Getting the methods to be performed to test on the light grid
         for i in ins:
-            method, l1, l2, l3, l4 = rc.regexClean(i)
+            method, l1, l2, l3, l4 = rc.regexClean(i,L)
 
             ## Get the instructios within the bounds of the Grid
-            if l1 < 0:
-                l1 = 0
-            if l3 < 0:
-                l3 = 0
-            if l2 > L:
-                l2 = L-1
-            if l4 > L:
-                l4 = L-1
+            # if l1 < 0:
+            #     l1 = 0
+            # if l3 < 0:
+            #     l3 = 0
+            # if l2 > L:
+            #     l2 = L-1
+            # if l4 > L:
+            #     l4 = L-1
         
-        return 0
+        return l1,l2,l3,l4
 
 if __name__ == "__main__":
     main()
