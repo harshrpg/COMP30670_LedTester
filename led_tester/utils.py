@@ -12,12 +12,12 @@ def parseFile(filePath):
         L = int(fin.readline())
         cmd=[]
         for i in fin.readlines():
-            cmd.append(i)
+            cmd.append(i.strip())
     return L, cmd
 
 def toFile(response):
     with open('input.txt','w') as fout:
         fout.writelines(response.text)
     fout.close()
-    return './input.txt'
+    return 'input.txt'
 

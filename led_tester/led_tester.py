@@ -45,7 +45,10 @@ def main():
             method, l1, l2, l3, l4 = rc.regexClean(i,L)
             
             ## Run the instructions on the grid
-            _lights.runCmd(method,l1,l2,l3,l4)
+            if method !=None:
+                _lights.runCmd(method,l1,l2,l3,l4)
+            else:
+                continue
         
         count = _lights.counts()
         print(count)
