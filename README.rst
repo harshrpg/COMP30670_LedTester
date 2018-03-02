@@ -26,7 +26,27 @@ Testing an array of LEDs
 Features
 --------
 
-* TODO
+This is an assignment that is used to test LEDs that are assumed to be a part of a grid. It accepts command line arguments as inputs:
+    
+    ``--input`` or ``-i`` to tell the program that next argument is an input
+    
+    ``<File Path>`` This can be local file path or a network URI
+
+Installation
+-------------
+
+Run the below command to install this project::
+    
+    $ pip install git+https://github.com/harshrpg/COMP30670_LedTester.git
+
+Usage
+-----
+
+Run the below command to use this project::
+
+    $ solve led --input <file>
+    
+Replace ``<file>`` with the path of the file
 
 Credits
 -------
