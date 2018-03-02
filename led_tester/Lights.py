@@ -11,38 +11,19 @@ class Lights(object):
         """Commands to test the leds from the grid"""
 
         if method == "turn on":
-            if l1 <= l3 and l2 <= l4:
-                for row in range(l2, l4+1):
-                    # print(l4)
-                    # print(row)
-                    for i, r in enumerate(self.__grid[row]):
-                        if i >= l1 and i <= l3 and self.__grid[row][i] == False:
-                            self.__grid[row][i] = True
-
+            for i,row in enumerate(self.__grid[l2:l4+1]):
+                row[l1:l3+1] = [True]*((l3+1)-l1)
+        
         elif method == "turn off":
-            if l1 <= l3 and l2 <= l4:
-                for row in range(l2, l4+1):
-                    # print(l4)
-                    # print(row)
-                    for i, r in enumerate(self.__grid[row]):
-                        if i >= l1 and i <= l3 and self.__grid[row][i] == True:
-                            self.__grid[row][i] = False
-
+            for i, row in enumerate(self.__grid[l2:l4+1]):
+                row[l1:l3+1] = [False]*((l3+1)-l1)
+        
         elif method == "switch":
-            if l1 <= l3 and l2 <= l4:
-                for row in range(l2, l4+1):
-                    # print(l4)
-                    # print(row)
-                    for i, r in enumerate(self.__grid[row]):
-                        if i >= l1 and i <= l3:
-                            if self.__grid[row][i]:
-                                self.__grid[row][i] = False
-                            else:
-                                self.__grid[row][i] = True
+            for i, row in enumerate(self.__grid[l2:l4+1]):
+                row[l1:l3+1] = [not col for col in row[l1:l3+1]]
 
     def counts(self):
         """Counts the total Leds that are on and off"""
         self.__onCount = (sum([row.count(True) for row in self.__grid]))
         self.__offCount = self.__offCount-self.__onCount
         return('LEDS ON: {}, LEDS OFF {}'.format(self.__onCount, self.__offCount))
-
