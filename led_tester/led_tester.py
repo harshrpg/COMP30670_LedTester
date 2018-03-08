@@ -3,6 +3,7 @@ import argparse
 from led_tester import utils
 from led_tester import regClean as rc
 from led_tester import Lights
+import time
 
 """Main module."""
 def main():
@@ -35,6 +36,7 @@ def main():
 
     # Read the file only if input argument is provided
     if args.input:
+        startTime = time.time()
         L,ins = utils.parseFile(filePath)
 
         ## Creating the lights grid
@@ -51,7 +53,9 @@ def main():
                 continue
         
         count = _lights.counts()
+        endTime = time.time()
         print(count)
+        print(endTime-startTime)
 
 
 
