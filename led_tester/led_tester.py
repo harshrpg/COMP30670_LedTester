@@ -36,7 +36,7 @@ def main():
 
     # Read the file only if input argument is provided
     if args.input:
-        startTime = time.time()
+        # startTime = time.time()
         L,ins = utils.parseFile(filePath)
 
         ## Creating the lights grid
@@ -53,9 +53,9 @@ def main():
                 continue
         
         count = _lights.counts()
-        endTime = time.time()
+        # endTime = time.time()
         print(count)
-        print(endTime-startTime)
+        # print(endTime-startTime)
 
 
 
