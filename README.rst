@@ -44,7 +44,7 @@ Usage
 
 Run the below command to use this project::
 
-    $ solve led --input <file>
+    $ solve_led --input <file>
     
 Replace ``<file>`` with the path of the file
 
