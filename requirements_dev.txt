@@ -12,7 +12,7 @@ Flask-WTF==0.14.2
 future==0.16.0
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 jinja2-time==0.2.0
 -e git+git@github.com:harshrpg/COMP30670_Assignment3.git@814d5b9187b0820d7ae4dd8be28fc8b021f94544#egg=led_solve
 -e git+git@github.com:harshrpg/COMP30670_LedTester.git@292270172b98bf9cdd566da9601276b2bcb7d7c3#egg=led_tester
