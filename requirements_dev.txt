@@ -25,7 +25,7 @@ requests==2.18.4
 six==1.11.0
 systeminfo==0.1.1
 systeminfo-flask==0.1.0
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.14.1
 whichcraft==0.4.1
 wincertstore==0.2
